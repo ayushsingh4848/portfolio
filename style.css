@@ -1,41 +1,42 @@
+/* Base Styles - Apply to all screen sizes, and will be overridden by media queries */
 html, body {
-    overflow-y: auto; /* Or just remove the overflow-y: hidden from '*' entirely */
-    height: 100%; /* Often needed if you set height on child elements */
+    overflow-y: auto; /* Allows vertical scrolling */
+    height: 100%; /* Ensures html and body take full viewport height */
 }
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    /* No overflow-y here */
+    box-sizing: border-box; /* Standard box model */
 }
-.navbar{
+
+/* Navbar Styles */
+.navbar {
     display: flex;
     justify-content: space-between;
-background-color: transparent;
-width: 100%;
-height:4rem;
-flex:1;
-padding-left: 7rem;
-padding-right: 2rem;
-align-items: center;
-backdrop-filter: blur(10px);
-position:fixed;
-z-index: 1000;
-
-
+    background-color: transparent;
+    width: 100%;
+    height: 4rem;
+    flex: 1;
+    padding-left: 7rem;
+    padding-right: 2rem;
+    align-items: center;
+    backdrop-filter: blur(10px); /* Blurry background effect */
+    position: fixed; /* Stays at the top when scrolling */
+    z-index: 1000; /* Ensures it stays above other content */
 }
-.navbar p{
+
+.navbar p {
     font-size: 1.5rem;
-     background: linear-gradient( #7141e7, #ebb6a8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-   
+    background: linear-gradient(#7141e7, #ebb6a8);
+    -webkit-background-clip: text; /* For gradient text in WebKit browsers */
+    -webkit-text-fill-color: transparent; /* For gradient text in WebKit browsers */
+    background-clip: text; /* Standard for gradient text */
+    color: transparent; /* Makes the original text color transparent to show gradient */
 }
-.buttons{
+
+/* Navbar Buttons */
+.buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,19 +45,22 @@ z-index: 1000;
     padding-right: 2rem;
     padding-left: 20rem;
     width: 90%;
-   
 }
-.buttons button{
-  background-color: transparent;
-  color: black;
-  border: none;
-  font-size: 1.2rem;
+
+.buttons button {
+    background-color: transparent;
+    color: black;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer; /* Indicates it's clickable */
 }
-.center{
+
+/* Center Section (Hero/Main Content) */
+.center {
     background-color: white;
     width: 100%;
-    height:100vh;
-    padding-top: 5rem;
+    height: 100vh; /* Takes full viewport height */
+    padding-top: 5rem; /* Space for the fixed navbar */
     padding-left: 5rem;
     padding-right: 5rem;
     display: flex;
@@ -64,17 +68,17 @@ z-index: 1000;
     align-items: center;
     flex: 1;
 }
-.center img{
-    
+
+.center img {
     height: 40rem;
-    filter: drop-shadow(0 0 0.75rem #ffff00da);
+    filter: drop-shadow(0 0 0.75rem #ffff00da); /* Yellowish drop shadow */
     padding-left: 0%;
     padding-right: 0%;
-   animation:slideInTop 1.5s ease-in-out;
-      
+    animation: slideInTop 1.5s ease-in-out; /* Animation on load */
 }
-@keyframes slideInTop{
-    from{
+
+@keyframes slideInTop {
+    from {
         transform: translateY(+100%);
         opacity: 0;
     }
@@ -84,6 +88,206 @@ z-index: 1000;
     }
 }
 
+.center p {
+    font-size: 10rem;
+    background: linear-gradient(to right, #7141e7, #ebb6a8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-left: 2rem;
+    align-self: center;
+    justify-content: center;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Center2 Section (e.g., Features/About) */
+.center2 {
+    width: 100%;
+    height: 110vh; /* Slightly more than full viewport height */
+    background-color: black;
+    padding-top: 10rem;
+    padding-left: 5rem;
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+}
+
+.circle {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%; /* Makes it a circle */
+    background: linear-gradient(to right, #7141e7, #ebb6a8);
+    margin-top: .5rem;
+}
+
+/* Animations for Center2 elements */
+#left {
+    animation: slideInLeft 1s ease-in-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-200%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+#right {
+    animation: slideInRight 1s ease-in-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(200%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+#dash {
+    background: linear-gradient(#7141e7, #ebb6a8);
+    margin-top: 1.2rem;
+    margin-right: 1rem;
+    font-size: 1.65rem;
+    width: 5rem;
+    height: 0.2rem;
+}
+
+#short {
+    background: linear-gradient(to right, #7141e7, #ebb6a8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    white-space: nowrap; /* Prevents text from wrapping */
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    height: 2rem;
+    flex: 1;
+}
+
+.content {
+    margin: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 5rem;
+    padding-right: 3rem;
+    margin-left: 5rem;
+}
+
+.content h2 {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    text-align: justify; /* Aligns text evenly */
+    font-size: 2.5rem;
+    color: rgb(255, 255, 255);
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+/* Contact Section */
+.contact {
+    height: 150vh; /* Generous height for content */
+    padding-top: 5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    background-color: #fffcfc;
+    background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
+}
+
+#noFill {
+    font-size: 12.5rem;
+    font-family: 'Permanent Marker', cursive; /* Assuming you have this font imported */
+    font-weight: 700;
+    color: white;
+    -webkit-text-stroke: 2px #7141e7; /* Outline effect */
+    font-style: italic;
+}
+
+#normal {
+    font-size: 10rem;
+    font-family: 'Permanent Marker', cursive; /* Assuming you have this font imported */
+    font-weight: 700;
+    background: linear-gradient(to right, #7141e7, #ebb6a8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    white-space: nowrap;
+    font-style: italic;
+}
+
+#username {
+    margin-top: 5rem;
+    text-align: end;
+    font-family: 'Lora', serif; /* Assuming you have this font imported */
+    font-size: 2.5rem;
+    font-weight: 200;
+}
+
+#username > h2 {
+    font-size: 4rem;
+}
+
+/* Social Handles Box */
+.handles {
+    width: 69%;
+    height: 5rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 15rem;
+    padding: 0 2rem;
+    border: none;
+    border-radius: 1.5rem;
+    box-shadow: 0 2px 8px rgba(50, 40, 40, 0.323);
+    margin-top: 12rem;
+}
+
+/* Individual Social Links */
+.links {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem; /* Icon size if using icon fonts */
+    text-decoration: none;
+    color: #000000;
+}
+
+.links a {
+    color: black;
+    padding: 0.8rem 2rem;
+    border: 0.2rem solid black;
+    border-radius: 1rem;
+    background: #f9f9f9;
+    transition: background 0.2s, color 0.2s, border-color 0.2s; /* Smooth hover effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-width: 6rem;
+    text-decoration: none; /* Remove underline from links */
+}
+
+.links a:hover {
+    background: #000000;
+    color: #fff;
+    border-color: #000000;
+}
+
+/* =================================================================== */
+/* Responsive Design - Media Queries */
+/* =================================================================== */
+
+/* Medium Screens (e.g., Tablets and smaller laptops) */
 @media (max-width: 1200px) {
     .navbar {
         padding-left: 2rem;
@@ -106,350 +310,227 @@ z-index: 1000;
     }
 }
 
+/* Small Screens (e.g., Larger Phones in Landscape, Smaller Tablets in Portrait) */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
-        height: auto;
+        flex-direction: column; /* Stack navbar items */
+        height: auto; /* Adjust height based on content */
         padding-left: 1rem;
         padding-right: 1rem;
+        position: static; /* Change to static so it flows with content, or adjust padding-top on body/main sections */
+        backdrop-filter: none; /* Often remove blur on very small screens for performance */
+        background-color: rgba(255, 255, 255, 0.9); /* Give it a solid background if not fixed */
+    }
+    .navbar p {
+        padding: 0.5rem 0; /* Add some padding around the logo text */
     }
     .buttons {
-        flex-direction: column;
+        flex-direction: column; /* Stack buttons vertically */
         padding-left: 0;
         padding-right: 0;
         width: 100%;
         gap: 0.5rem;
+        align-items: center; /* Center buttons when stacked */
+        padding-bottom: 0.5rem; /* Add some space below buttons */
+    }
+    .buttons button {
+        font-size: 1.1rem; /* Slightly smaller button text */
+        padding: 0.5rem 1rem; /* Add padding to buttons for better touch targets */
+        width: 80%; /* Make buttons take up more width */
+        max-width: 15rem; /* Prevent them from becoming too wide */
     }
     .center {
-        flex-direction: column;
+        flex-direction: column; /* Stack image and text vertically */
         padding-left: 1rem;
         padding-right: 1rem;
-        padding-top: 6rem;
+        padding-top: 2rem; /* Reduced top padding as navbar is no longer fixed (or adjust if fixed) */
+        height: auto; /* Allow height to adjust to content */
+        min-height: 80vh; /* Ensure it still takes up significant vertical space */
+        justify-content: flex-start; /* Align content to the start of the column */
     }
     .center img {
         height: 18rem;
         margin-bottom: 1rem;
+        animation: none; /* Disable animation on mobile for faster load */
     }
     .center p {
         font-size: 2.5rem;
         margin-left: 0;
         text-align: center;
+        margin-top: 1rem; /* Add space between image and text */
     }
-}
-
-@media (max-width: 480px) {
-    .navbar p {
-        font-size: 1rem;
-    }
-    .center img {
-        height: 10rem;
-    }
-    .center p {
-        font-size: 1.2rem;
-    }
-}
-
-.center p{
-   font-size: 10rem; 
- background: linear-gradient(to right, #7141e7, #ebb6a8);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-color: transparent;
-margin-left: 2rem;
-align-self: center;
-justify-content: center;
-padding: 0;
-font-family: 'Times New Roman', Times, serif;
-}
-.center2{
-    width:100%;
-    height: 110vh;
-    background-color:black;
-    padding-top:10rem;
-    padding-left: 5rem; 
-    display: flex;
-    flex-wrap: wrap;
-    
-
-
-
-}
-.circle{
-    width:1.5rem;
-    height:1.5rem;
-    border-radius: 50%;
-     background: linear-gradient(to right, #7141e7, #ebb6a8);
-     margin-top: .5rem; 
-
-}   
-#left{
-    animation:slideInLeft 1s ease-in-out;
-}
-@keyframes slideInLeft{
-    from{
-        transform: translateX(-200%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-#right{
-    animation:slideInRight 1s ease-in-out;
-}
-@keyframes slideInRight{
-    from{
-        transform: translateX(200%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-#dash{
- background:linear-gradient( #7141e7, #ebb6a8);
-
-margin-top: 1.2rem;
-margin-right: 1rem;
- font-size: 1.65rem;   
- width:5rem;
- height: 0.2rem;
-}
-#short{
-     background: linear-gradient(to right, #7141e7, #ebb6a8);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-white-space: nowrap;
-font-size: 1.5rem;
-padding-bottom: 1rem;
-height: 2rem;
-flex: 1;
-
-}
-.content {
-    margin: 0 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding-left: 5rem;
-   padding-right: 3rem;
-   margin-left: 5rem;
-}
-
-.content h2 {
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    text-align: justify;
-    font-size:2.5rem;
-    color: rgb(255, 255, 255);
-    padding-bottom: 1rem;
-    text-align: center;
-   
-
-}
-
-
-.contact{
-   
-    height: 150vh;
-   padding-top: 5rem;
-   padding-left: 4rem;
-   padding-right: 4rem;
-    background-color: #fffcfc;
-background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-}
-#noFill{
-
-    font-size: 12.5rem;
-    font-family:permanent marker;
-    font-weight: 700;
-    color: white;
-    -webkit-text-stroke: 2px #7141e7;
-    font-style: italic;
-}
-#normal{
-    font-size: 10rem;
-    font-family:permanent marker;
-    font-weight: 700;
-    background: linear-gradient(to right, #7141e7, #ebb6a8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    white-space: nowrap;
-    font-style: italic;
-}
-#username{
-    margin-top: 5rem;
-    text-align: end;
-    font-family:lora;
-    font-size: 2.5rem;
-    font-weight: 200;
-}
-
-#username>h2{
-    font-size: 4rem;
-   
-}
-.handles {
-    width: 69%;
-    height: 5rem;
-    background-color: #fff;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-left: 15rem;
-    padding: 0 2rem;
-    border: none; /* Remove border from main box */
-    border-radius: 1.5rem;
-    box-shadow: 0 2px 8px rgba(50, 40, 40, 0.323);
-    margin-top: 12rem;
-}
-
-.links {
-    display: flex;
-    gap: 1.5rem;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    text-decoration: none;
-    color: #000000;
-}
-
-.links a {
-    
-    color: black;
-   
-    padding: 0.8rem 2rem;
-    border: 0.2rem solid black;
-    border-radius: 1rem;
-    background: #f9f9f9;
-    transition: background 0.2s, color 0.2s, border-color 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    min-width: 6rem;
-   
-}
-
-.links a:hover {
-    background: #000000;
-    color: #fff;
-    border-color: #000000;
-}
-@media (max-width: 768px) {
-    .buttons {
-        /* Adjusted from your existing, just to be explicit for smaller screens */
-        align-items: center; /* Center buttons when stacked */
-    }
-
-    .center {
-        /* Ensure enough top padding for fixed navbar */
-        padding-top: 8rem; /* Adjust as needed */
-    }
-
-    .content {
-        margin: 0 1rem; /* Reduce horizontal margins */
-        padding-left: 1rem; /* Reduce left padding */
-        padding-right: 1rem; /* Ensure some right padding */
-        text-align: center; /* Center content text if preferred on mobile */
-    }
-
-    .content h2 {
-        font-size: 2rem; /* Slightly smaller for better fit */
-    }
-
-    .handles {
-        width: 95%; /* Make it take up more width */
-        margin-left: auto; /* Center horizontally */
-        margin-right: auto; /* Center horizontally */
-        flex-direction: column; /* Stack the social links */
-        height: auto; /* Allow height to adjust */
-        padding: 1rem; /* Add some padding inside the handle box */
-        margin-top: 5rem; /* Adjust top margin as content might be shorter */
-    }
-
-    .links {
-        flex-direction: column; /* Stack the individual links/icons */
-        gap: 0.8rem; /* Reduce gap between stacked links */
-        width: 100%; /* Ensure links take full width of container */
-    }
-
-    .links a {
-        width: 90%; /* Make individual links take up more width */
-        max-width: 15rem; /* Prevent them from becoming too wide on slightly larger mobile screens */
-        padding: 0.6rem 1rem; /* Adjust padding */
-        font-size: 1.1rem; /* Adjust font size for link text */
-    }
-
-    #noFill, #normal {
-        font-size: 5rem; /* Significantly reduce for smaller screens */
-        text-align: center; /* Center contact text */
-    }
-
-    #username {
-        margin-top: 2rem;
-        text-align: center; /* Center username text */
-        font-size: 1.8rem;
-    }
-
-    #username > h2 {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar {
-        /* Already defined, just ensure it's still good */
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-    }
-    .buttons button {
-        font-size: 1rem; /* Slightly smaller button text */
-    }
-    .center img {
-        height: 15rem; /* Even smaller image for very small screens */
-    }
-    .center p {
-        font-size: 1.5rem; /* Adjusted based on your existing 1.2rem */
+    .center2 {
+        padding-top: 5rem; /* Adjust padding for center2 section */
+        padding-left: 1rem;
+        padding-right: 1rem;
+        height: auto; /* Allow center2 to adjust its height */
+        padding-bottom: 2rem; /* Add some bottom padding */
+        align-items: center; /* Center content horizontally within center2 */
+        justify-content: center; /* Center content horizontally within center2 */
     }
     .circle {
-        width: 1rem;
-        height: 1rem;
+        width: 1.2rem;
+        height: 1.2rem;
+        margin-top: 0.4rem;
     }
     #dash {
         width: 3rem;
         font-size: 1.2rem;
+        margin-top: 1rem;
+        margin-right: 0.5rem; /* Adjust spacing */
     }
     #short {
-        font-size: 1.2rem;
+        font-size: 1.3rem; /* Adjusted font size */
+        padding-bottom: 0.8rem;
+        white-space: normal; /* Allow text to wrap if needed */
+        text-align: center; /* Center short text */
+    }
+    .content {
+        margin: 0; /* Remove horizontal margins for full width utilization */
+        padding-left: 0.5rem; /* Minimal padding */
+        padding-right: 0.5rem;
+        align-items: center; /* Center items within content */
+        margin-left: 0; /* Remove left margin */
     }
     .content h2 {
-        font-size: 1.8rem;
+        font-size: 1.8rem; /* Slightly smaller for better fit */
+        text-align: center; /* Center align text */
+        padding-bottom: 0.8rem;
     }
     .contact {
         padding-left: 1rem;
         padding-right: 1rem;
         height: auto; /* Allow contact section to adjust height based on content */
         padding-bottom: 2rem; /* Add some bottom padding */
+        display: flex; /* Use flexbox to center elements */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     #noFill, #normal {
-        font-size: 3.5rem; /* Further reduction for smallest screens */
+        font-size: 5rem; /* Significantly reduce for smaller screens */
+        text-align: center; /* Center contact text */
+        white-space: normal; /* Allow text to wrap if it's too long */
+        line-height: 1.1; /* Adjust line height for stacked text */
+    }
+    #noFill {
+        -webkit-text-stroke: 1.8px #7141e7; /* Slightly thinner stroke */
     }
     #username {
-        font-size: 1.5rem;
+        margin-top: 2rem;
+        text-align: center; /* Center username text */
+        font-size: 1.8rem;
     }
     #username > h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
+    }
+    .handles {
+        width: 95%; /* Make it take up more width */
+        margin-left: auto; /* Center horizontally */
+        margin-right: auto; /* Center horizontally */
+        flex-direction: column; /* Stack the social links */
+        height: auto; /* Allow height to adjust */
+        padding: 1rem 0.5rem; /* Add some padding inside the handle box */
+        margin-top: 5rem; /* Adjust top margin as content might be shorter */
+    }
+    .links {
+        flex-direction: column; /* Stack the individual links/icons */
+        gap: 0.8rem; /* Reduce gap between stacked links */
+        width: 100%; /* Ensure links take full width of container */
+        align-items: center; /* Center individual links */
     }
     .links a {
-        font-size: 0.9rem; /* Smaller font for smallest link text */
-        padding: 0.5rem 0.8rem; /* Smaller padding */
-        min-width: unset; /* Allow links to shrink further */
-        width: 95%; /* Adjust width for full utilization */
+        width: 90%; /* Make individual links take up more width */
+        max-width: 15rem; /* Prevent them from becoming too wide */
+        padding: 0.6rem 1rem; /* Adjust padding */
+        font-size: 1.1rem; /* Adjust font size for link text */
+    }
+}
+
+/* Very Small Screens (e.g., iPhone SE, older smartphones in portrait) */
+@media (max-width: 480px) {
+    .navbar {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        height: auto;
+    }
+    .navbar p {
+        font-size: 1.2rem; /* Slightly larger for better visibility */
+    }
+    .buttons {
+        gap: 0.3rem; /* Even tighter gap for very small screens */
+    }
+    .buttons button {
+        font-size: 0.85rem; /* Slightly smaller button text */
+        padding: 0.4rem 0.6rem;
+        width: 90%; /* Take up more width */
+        max-width: 12rem; /* Tighter max-width */
+    }
+    .center {
+        padding-top: 1rem; /* Very minimal top padding if navbar is static */
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        min-height: 70vh; /* Allow more space for scrolling */
+    }
+    .center img {
+        height: 12rem; /* Even smaller image */
+        margin-bottom: 0.5rem;
+    }
+    .center p {
+        font-size: 1.8rem; /* Adjusted for better readability */
+        line-height: 1.2; /* Better line spacing for very small text */
+    }
+    .center2 {
+        padding-top: 3rem; /* More compact top padding */
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .circle {
+        width: 0.9rem;
+        height: 0.9rem;
+        margin-top: 0.2rem;
+    }
+    #dash {
+        width: 2rem;
+        font-size: 0.9rem;
+        margin-top: 0.6rem;
+    }
+    #short {
+        font-size: 1rem;
+        padding-bottom: 0.3rem;
+    }
+    .content h2 {
+        font-size: 1.4rem; /* Further reduction for heading */
+        padding-bottom: 0.3rem;
+    }
+    .contact {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        padding-bottom: 1rem;
+    }
+    #noFill, #normal {
+        font-size: 3rem; /* Further reduction for smallest screens */
+        -webkit-text-stroke: 1.2px #7141e7; /* Even thinner stroke */
+        line-height: 1; /* Tight line height */
+    }
+    #username {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+    }
+    #username > h2 {
+        font-size: 1.8rem;
+    }
+    .handles {
+        margin-top: 2rem;
+        padding: 0.5rem;
+        width: 98%; /* Almost full width */
+    }
+    .links {
+        gap: 0.5rem; /* Minimal gap */
+    }
+    .links a {
+        font-size: 0.8rem; /* Smallest font for links */
+        padding: 0.3rem 0.5rem;
+        max-width: 10rem; /* Tighter max-width for very small buttons */
     }
 }
