@@ -1,0 +1,343 @@
+html, body {
+    overflow-y: auto; /* Or just remove the overflow-y: hidden from '*' entirely */
+    height: 100%; /* Often needed if you set height on child elements */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* No overflow-y here */
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+background-color: transparent;
+width: 100%;
+height:4rem;
+flex:1;
+padding-left: 7rem;
+padding-right: 2rem;
+align-items: center;
+backdrop-filter: blur(10px);
+position:fixed;
+z-index: 1000;
+
+
+}
+.navbar p{
+    font-size: 1.5rem;
+     background: linear-gradient( #7141e7, #ebb6a8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+   
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    justify-content: space-evenly;
+    padding-right: 2rem;
+    padding-left: 20rem;
+    width: 90%;
+   
+}
+.buttons button{
+  background-color: transparent;
+  color: black;
+  border: none;
+  font-size: 1.2rem;
+}
+.center{
+    background-color: white;
+    width: 100%;
+    height:100vh;
+    padding-top: 5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+.center img{
+    
+    height: 40rem;
+    filter: drop-shadow(0 0 0.75rem #ffff00da);
+    padding-left: 0%;
+    padding-right: 0%;
+   animation:slideInTop 1.5s ease-in-out;
+      
+}
+@keyframes slideInTop{
+    from{
+        transform: translateY(+100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1200px) {
+    .navbar {
+        padding-left: 2rem;
+        padding-right: 1rem;
+    }
+    .buttons {
+        padding-left: 2rem;
+        width: 100%;
+        gap: 1rem;
+    }
+    .center {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .center img {
+        height: 28rem;
+    }
+    .center p {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .buttons {
+        flex-direction: column;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+        gap: 0.5rem;
+    }
+    .center {
+        flex-direction: column;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 6rem;
+    }
+    .center img {
+        height: 18rem;
+        margin-bottom: 1rem;
+    }
+    .center p {
+        font-size: 2.5rem;
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar p {
+        font-size: 1rem;
+    }
+    .center img {
+        height: 10rem;
+    }
+    .center p {
+        font-size: 1.2rem;
+    }
+}
+
+.center p{
+   font-size: 10rem; 
+ background: linear-gradient(to right, #7141e7, #ebb6a8);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+color: transparent;
+margin-left: 2rem;
+align-self: center;
+justify-content: center;
+padding: 0;
+font-family: 'Times New Roman', Times, serif;
+}
+.center2{
+    width:100%;
+    height: 110vh;
+    background-color:black;
+    padding-top:10rem;
+    padding-left: 5rem; 
+    display: flex;
+    flex-wrap: wrap;
+    
+
+
+
+}
+.circle{
+    width:1.5rem;
+    height:1.5rem;
+    border-radius: 50%;
+     background: linear-gradient(to right, #7141e7, #ebb6a8);
+     margin-top: .5rem; 
+
+}   
+#left{
+    animation:slideInLeft 1s ease-in-out;
+}
+@keyframes slideInLeft{
+    from{
+        transform: translateX(-200%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+#right{
+    animation:slideInRight 1s ease-in-out;
+}
+@keyframes slideInRight{
+    from{
+        transform: translateX(200%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+#dash{
+ background:linear-gradient( #7141e7, #ebb6a8);
+
+margin-top: 1.2rem;
+margin-right: 1rem;
+ font-size: 1.65rem;   
+ width:5rem;
+ height: 0.2rem;
+}
+#short{
+     background: linear-gradient(to right, #7141e7, #ebb6a8);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+white-space: nowrap;
+font-size: 1.5rem;
+padding-bottom: 1rem;
+height: 2rem;
+flex: 1;
+
+}
+.content {
+    margin: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 5rem;
+   padding-right: 3rem;
+   margin-left: 5rem;
+}
+
+.content h2 {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    text-align: justify;
+    font-size:2.5rem;
+    color: rgb(255, 255, 255);
+    padding-bottom: 1rem;
+    text-align: center;
+   
+
+}
+
+
+.contact{
+   
+    height: 150vh;
+   padding-top: 5rem;
+   padding-left: 4rem;
+   padding-right: 4rem;
+    background-color: #fffcfc;
+background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+#noFill{
+
+    font-size: 12.5rem;
+    font-family:permanent marker;
+    font-weight: 700;
+    color: white;
+    -webkit-text-stroke: 2px #7141e7;
+    font-style: italic;
+}
+#normal{
+    font-size: 10rem;
+    font-family:permanent marker;
+    font-weight: 700;
+    background: linear-gradient(to right, #7141e7, #ebb6a8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    white-space: nowrap;
+    font-style: italic;
+}
+#username{
+    margin-top: 5rem;
+    text-align: end;
+    font-family:lora;
+    font-size: 2.5rem;
+    font-weight: 200;
+}
+
+#username>h2{
+    font-size: 4rem;
+   
+}
+.handles {
+    width: 69%;
+    height: 5rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 15rem;
+    padding: 0 2rem;
+    border: none; /* Remove border from main box */
+    border-radius: 1.5rem;
+    box-shadow: 0 2px 8px rgba(50, 40, 40, 0.323);
+    margin-top: 12rem;
+}
+
+.links {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #000000;
+}
+
+.links a {
+    
+    color: black;
+   
+    padding: 0.8rem 2rem;
+    border: 0.2rem solid black;
+    border-radius: 1rem;
+    background: #f9f9f9;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-width: 6rem;
+   
+}
+
+.links a:hover {
+    background: #000000;
+    color: #fff;
+    border-color: #000000;
+}
