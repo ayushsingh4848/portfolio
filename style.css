@@ -341,3 +341,115 @@ background-image: url("https://www.transparenttextures.com/patterns/black-thread
     color: #fff;
     border-color: #000000;
 }
+@media (max-width: 768px) {
+    .buttons {
+        /* Adjusted from your existing, just to be explicit for smaller screens */
+        align-items: center; /* Center buttons when stacked */
+    }
+
+    .center {
+        /* Ensure enough top padding for fixed navbar */
+        padding-top: 8rem; /* Adjust as needed */
+    }
+
+    .content {
+        margin: 0 1rem; /* Reduce horizontal margins */
+        padding-left: 1rem; /* Reduce left padding */
+        padding-right: 1rem; /* Ensure some right padding */
+        text-align: center; /* Center content text if preferred on mobile */
+    }
+
+    .content h2 {
+        font-size: 2rem; /* Slightly smaller for better fit */
+    }
+
+    .handles {
+        width: 95%; /* Make it take up more width */
+        margin-left: auto; /* Center horizontally */
+        margin-right: auto; /* Center horizontally */
+        flex-direction: column; /* Stack the social links */
+        height: auto; /* Allow height to adjust */
+        padding: 1rem; /* Add some padding inside the handle box */
+        margin-top: 5rem; /* Adjust top margin as content might be shorter */
+    }
+
+    .links {
+        flex-direction: column; /* Stack the individual links/icons */
+        gap: 0.8rem; /* Reduce gap between stacked links */
+        width: 100%; /* Ensure links take full width of container */
+    }
+
+    .links a {
+        width: 90%; /* Make individual links take up more width */
+        max-width: 15rem; /* Prevent them from becoming too wide on slightly larger mobile screens */
+        padding: 0.6rem 1rem; /* Adjust padding */
+        font-size: 1.1rem; /* Adjust font size for link text */
+    }
+
+    #noFill, #normal {
+        font-size: 5rem; /* Significantly reduce for smaller screens */
+        text-align: center; /* Center contact text */
+    }
+
+    #username {
+        margin-top: 2rem;
+        text-align: center; /* Center username text */
+        font-size: 1.8rem;
+    }
+
+    #username > h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        /* Already defined, just ensure it's still good */
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .buttons button {
+        font-size: 1rem; /* Slightly smaller button text */
+    }
+    .center img {
+        height: 15rem; /* Even smaller image for very small screens */
+    }
+    .center p {
+        font-size: 1.5rem; /* Adjusted based on your existing 1.2rem */
+    }
+    .circle {
+        width: 1rem;
+        height: 1rem;
+    }
+    #dash {
+        width: 3rem;
+        font-size: 1.2rem;
+    }
+    #short {
+        font-size: 1.2rem;
+    }
+    .content h2 {
+        font-size: 1.8rem;
+    }
+    .contact {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        height: auto; /* Allow contact section to adjust height based on content */
+        padding-bottom: 2rem; /* Add some bottom padding */
+    }
+    #noFill, #normal {
+        font-size: 3.5rem; /* Further reduction for smallest screens */
+    }
+    #username {
+        font-size: 1.5rem;
+    }
+    #username > h2 {
+        font-size: 2rem;
+    }
+    .links a {
+        font-size: 0.9rem; /* Smaller font for smallest link text */
+        padding: 0.5rem 0.8rem; /* Smaller padding */
+        min-width: unset; /* Allow links to shrink further */
+        width: 95%; /* Adjust width for full utilization */
+    }
+}
